@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TravelBloom helps you discover beautiful beaches, temples and countries. Find your next adventure with inspiring travel recommendations.">
+  <meta name="theme-color" content="#102b30">
+  <title>TravelBloom | Find your next extraordinary place</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="nav-shell container">
+      <a class="brand" href="index.html" aria-label="TravelBloom home"><span class="brand-icon" aria-hidden="true">✦</span><span>travel<span class="brand-accent">bloom</span><span class="brand-dot">.</span></span></a>
+      <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="contact.html">Contact Us</a>
+      </nav>
+      <form class="nav-search" id="search-form" action="index.html" method="get" role="search">
+        <label class="sr-only" for="search-input">Search for a destination</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="search-input" name="q" type="search" autocomplete="off" placeholder="Beach, temple, country..." maxlength="80" required>
+        <button class="btn btn-search" type="submit">Search</button>
+        <button class="btn btn-clear" type="button" id="clear-search">Reset</button>
+      </form>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-backdrop" role="img" aria-label="Majestic mountains and a peaceful lake"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <p class="eyebrow light-eyebrow"><span class="eyebrow-line"></span> THE WORLD IS YOURS TO EXPLORE</p>
+          <h1 id="hero-heading">Go somewhere<br><em>extraordinary.</em></h1>
+          <p class="hero-description">From sun-kissed beaches to timeless temples, discover the places, stories and experiences that stay with you forever.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-large" type="button" id="explore-trigger">Explore destinations <span aria-hidden="true">↗</span></button>
+            <a href="about.html" class="hero-text-link">Our story <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero-caption"><span class="caption-marker" aria-hidden="true">✧</span><span>Collect moments.<br>Not just miles.</span></div>
+      </div>
+      <div class="hero-bottom container"><span>01 / FIND YOUR NEXT ADVENTURE</span><span class="scroll-hint">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
+    </section>
+
+    <section class="explore-section section-pad" id="discover" aria-labelledby="discover-heading">
+      <div class="container">
+        <div class="section-topline"><span class="section-index">01 — DISCOVER</span><span class="section-top-note">Curated for curious travelers</span></div>
+        <div class="section-heading-row">
+          <div><p class="eyebrow">A LITTLE INSPIRATION</p><h2 id="discover-heading">Find a place that <em>moves you.</em></h2></div>
+          <p class="section-intro">Your next favorite memory is out there. Start with a destination, a feeling, or a little curiosity.</p>
+        </div>
+        <div class="search-suggestions" aria-label="Popular searches">
+          <span class="suggestions-label">TRY SEARCHING</span>
+          <button class="chip" type="button" data-search="beach">🏝️ Beaches <span aria-hidden="true">↗</span></button>
+          <button class="chip" type="button" data-search="temple">⛩️ Temples <span aria-hidden="true">↗</span></button>
+          <button class="chip" type="button" data-search="country">🌍 Countries <span aria-hidden="true">↗</span></button>
+          <button class="chip" type="button" data-search="Japan">🇯🇵 Japan <span aria-hidden="true">↗</span></button>
+        </div>
+
+        <section id="results-section" class="results-section" aria-labelledby="results-heading" aria-live="polite" hidden>
+          <div class="results-heading-row"><div><p class="eyebrow">YOUR TRAVEL MATCHES</p><h3 id="results-heading">Recommended for you</h3></div><span id="results-count" class="results-count"></span></div>
+          <div id="results-grid" class="results-grid"></div>
+          <div class="empty-state" id="empty-state" hidden><span class="empty-icon" aria-hidden="true">⌕</span><h3>No destinations found</h3><p id="empty-description">Try searching for beach, temple, country, Japan or Brazil.</p><button class="btn btn-primary" type="button" data-search="beach">Explore beaches instead ↗</button></div>
+        </section>
+
+        <section class="featured-section" id="featured-section" aria-labelledby="featured-heading">
+          <div class="featured-header"><h3 id="featured-heading">Where will your curiosity take you?</h3><span>EXPLORE BY EXPERIENCE <span aria-hidden="true">↘</span></span></div>
+          <div class="feature-grid">
+            <button type="button" class="feature-card" data-search="beach" aria-label="Explore beaches">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=900&amp;q=82" alt="Turquoise sea and a white sandy beach" loading="lazy">
+              <span class="feature-overlay"></span><span class="feature-number">01 / COASTLINES</span><span class="feature-bottom"><span><strong>Chase the sun.</strong><small>Beaches &amp; islands</small></span><span class="feature-arrow" aria-hidden="true">↗</span></span>
+            </button>
+            <button type="button" class="feature-card" data-search="temple" aria-label="Explore temples">
+              <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&amp;fit=crop&amp;w=900&amp;q=82" alt="Traditional Japanese temple in Kyoto" loading="lazy">
+              <span class="feature-overlay"></span><span class="feature-number">02 / HERITAGE</span><span class="feature-bottom"><span><strong>Find your wonder.</strong><small>Temples &amp; culture</small></span><span class="feature-arrow" aria-hidden="true">↗</span></span>
+            </button>
+            <button type="button" class="feature-card" data-search="country" aria-label="Explore countries">
+              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&amp;fit=crop&amp;w=900&amp;q=82" alt="Beautiful Mediterranean coastal village" loading="lazy">
+              <span class="feature-overlay"></span><span class="feature-number">03 / DISCOVERY</span><span class="feature-bottom"><span><strong>See it all.</strong><small>Countries &amp; cities</small></span><span class="feature-arrow" aria-hidden="true">↗</span></span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="values-strip" aria-label="Why travel with TravelBloom">
+      <div class="container values-grid">
+        <div class="value-item"><span class="value-symbol" aria-hidden="true">✧</span><div><h3>Thoughtfully curated</h3><p>Places worth adding to your story.</p></div></div>
+        <div class="value-item"><span class="value-symbol" aria-hidden="true">◎</span><div><h3>Easy to discover</h3><p>Find your inspiration in seconds.</p></div></div>
+        <div class="value-item"><span class="value-symbol" aria-hidden="true">↗</span><div><h3>Made for explorers</h3><p>Discover beyond the ordinary.</p></div></div>
+      </div>
+    </section>
+
+    <section class="closing-cta"><div class="container closing-inner"><div><p class="eyebrow light-eyebrow">THE JOURNEY BEGINS WITH A QUESTION</p><h2>Where to <em>next?</em></h2></div><a class="btn btn-primary btn-large" href="contact.html">Let's talk travel <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-icon" aria-hidden="true">✦</span><span>travel<span class="brand-accent">bloom</span><span class="brand-dot">.</span></span></a><p>Inspiring your next great story, one destination at a time.</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a></div><span class="copyright">© 2026 TravelBloom. A travel inspiration project.</span></div></footer>
+</body>
+</html>
